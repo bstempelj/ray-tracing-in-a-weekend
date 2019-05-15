@@ -9,15 +9,17 @@ function chapter1() {
   const nx = 300;
   const ny = 150;
 
-  // j = 199..0
   for (let j = ny-1; j >= 0; j--) {
-    // i = 0..299
     for (let i = 0; i < nx; i++) {
-      let r = i / nx; // r = 0..1
-      let g = j / ny; // g = 1..0
+      let r = i / nx;
+      let g = 1 - (j / ny);
       let b = 0.2;
 
-      ctx.fillStyle = rgb(r * 255, g * 255, b * 255);
+      ctx.fillStyle = rgb(
+        r * 255.99,
+        g * 255.99,
+        b * 255.99
+      );
       ctx.fillRect(i, j, 1, 1);
     }
   }

@@ -97,9 +97,9 @@ function chapter5_2() {
   const nx = 300;
   const ny = 150;
 
-  const lower_left_corner = new vec3(-3, -1.5, -1);
-  const horizontal = new vec3(6, 0, 0);
-  const vertical = new vec3(0, 3, 0);
+  const lower_left_corner = new vec3(3, 1.5, -1);
+  const horizontal = new vec3(-6, 0, 0);
+  const vertical = new vec3(0, -3, 0);
   const origin = new vec3(0, 0, 0);
 
   const list = [
@@ -111,9 +111,9 @@ function chapter5_2() {
 
   let u, v, r, col;
 
-  // j = 199..0
+  // j = 199..0 => height
   for (let j = ny-1; j >= 0; j--) {
-    // i = 0..299
+    // i = 0..299 => width
     for (let i = 0; i < nx; i++) {
       u = i / nx;
       v = j / ny;
@@ -128,9 +128,9 @@ function chapter5_2() {
       col = color(r, world);
 
       ctx.fillStyle = rgb(
-        col.r() * 255,
-        col.g() * 255,
-        col.b() * 255
+        col.r() * 255.99,
+        col.g() * 255.99,
+        col.b() * 255.99
       );
       ctx.fillRect(i, j, 1, 1);
     }
