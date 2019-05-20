@@ -14,6 +14,10 @@ class vec3 {
     return Math.hypot(this.e[0], this.e[1], this.e[2]);
   }
 
+  length2() {
+    return this.x()*this.x() + this.y()*this.y() + this.z()*this.z();
+  }
+
   str() {
     return `vec3(${this.x()}, ${this.y()}, ${this.z()})`;
   }
